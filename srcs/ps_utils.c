@@ -1,4 +1,4 @@
-#include	"./../headers/pushswap.h"
+#include	"./../headers/push_swap.h"
 
 int
 	ps_atoi(char *s)
@@ -19,12 +19,3 @@ int
 	return (r * minus);
 }
 
-int
-	main(int argc, char **argv)
-{
-	if (argc < 2)
-		return (0);
-	int	n = ps_atoi(argv[1]);
-	printf("n : %d\n", n);
-	
-}
