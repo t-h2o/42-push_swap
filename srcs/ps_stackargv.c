@@ -66,5 +66,6 @@ int
 		free(tab);
 		return (1);
 	}
+	free(tab);
 	return (0);
 }

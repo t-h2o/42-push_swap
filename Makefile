@@ -56,7 +56,8 @@ re:		fclean all
 
 test:	all
 	clear
-	./${NAME} 5 2 3 1
+	./${NAME} 1 2 3 4 5
+#	./${NAME} 5 2 3 1 4
 leak:
 	valgrind --leak-check=full ./${NAME} 12 65 78 45 32 98 0
 	valgrind --leak-check=full ./${NAME} 12 65 78 45lol 32 98 0

@@ -58,13 +58,12 @@ static void
 	int	i;
 	if (p)
 		printf("\n\n");
+	if (!p)
+		return ;
 	i = 0;
 	while (p)
 	{
-		if (!(p->up))
-			printf("%d\t|\t%d\tup %p\t\t%p\tdown %p\n", i, p->n, p->up, p, p->down);
-		else
-			printf("%d\t|\t%d\tup %p\t%p\tdown %p\n", i, p->n, p->up, p, p->down);
+		printf("%d\t|\t%d\t%p\tdown %p\n", i, p->n, p, p->down);
 		i++;
 		p = p->down;
 	}
@@ -75,8 +74,7 @@ void
 	ps_show(plate *topa, plate *topb)
 {
 	ps_simple_display(topa, topb);	
-	/*
-	ps_dis_play(topa, 'A');
-	ps_dis_play(topb, 'B');
-	*/
+
+//	ps_dis_play(topa, 'A');
+//	ps_dis_play(topb, 'B');
 }

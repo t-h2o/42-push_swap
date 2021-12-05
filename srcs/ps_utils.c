@@ -26,6 +26,24 @@ void
 }
 
 void
+	ps_reverse_rotate(plate **a)
+{
+	plate	*b;
+	plate	*y;
+	plate	*end;
+
+	b = *a;
+	end = *a;
+	while (end->down)
+	{	y = end;
+		end = end->down;
+	}
+	y->down = 0;
+	end->down = *a;
+	*a = end;
+}
+
+void
 	ps_rotate(plate **a)
 {
 	plate	*b;
@@ -37,10 +55,6 @@ void
 	z = b;
 	while (z->down)
 		z = z->down;
-
-/*	printf("b : %p\t%d\n", b, b->n);	
-	printf("z : %p\t%d\n", z, z->n);
-*/	
 	z->down = *a;
 	(*a)->up = z;
 	(*a)->down = 0;

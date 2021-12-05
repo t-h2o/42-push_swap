@@ -22,8 +22,10 @@ struct s_list {
 
 void	ps_scan(plate **a, plate **b);
 
-	// functions
+// functions
 
+	// Utils
+void	ps_push(plate **src, plate **dst);
 int		ps_atoi(char *s);
 int		ps_argc_to_stack(int argc, char **argv, plate **topa);
 
@@ -32,6 +34,7 @@ void	ps_free_stack(plate *top);
 void	ps_show(plate *topa, plate *topb);
 
 void	ps_rotate(plate **a);
+void	ps_reverse_rotate(plate **a);
 void	ps_swap(plate *x);
 
 	//	error

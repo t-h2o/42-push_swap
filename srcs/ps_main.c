@@ -18,4 +18,5 @@ int
 	ps_scan(&topa, &topb);
 
 	ps_free_stack(topa);	
+	ps_free_stack(topb);	
 }
