@@ -1,4 +1,64 @@
-#include	"./../headers/push_swap.h"
+#include	"push_swap.h"
+
+void
+	ps_push(plate **src, plate **dst)
+{
+	plate	*b;
+	if (!*src)
+		return ;
+	if (!*dst)
+	{
+		*dst = *src;
+		*src = (*src)->down;
+		(*src)->up = 0;
+		(*dst)->down = 0;
+	}
+	else
+	{
+		(*dst)->up = *src;
+		*src = (*src)->down;
+		if (*src)
+			(*src)->up = 0;
+		b = (*dst);
+		*dst = (*dst)->up;
+		(*dst)->down = b;
+	}
+}
+
+void
+	ps_rotate(plate **a)
+{
+	plate	*b;
+	plate	*z;
+
+	if (!*a)
+		return ;
+	b = (*a)->down;
+	z = b;
+	while (z->down)
+		z = z->down;
+
+/*	printf("b : %p\t%d\n", b, b->n);	
+	printf("z : %p\t%d\n", z, z->n);
+*/	
+	z->down = *a;
+	(*a)->up = z;
+	(*a)->down = 0;
+	b->up= 0;
+	*a = b;
+}
+
+void
+	ps_swap(plate *x)
+{
+	int	tmp;
+
+	if (!x)
+		return ;
+	tmp = x->n;
+	x->n = x->down->n;
+	x->down->n = tmp;
+}
 
 int
 	ps_atoi(char *s)

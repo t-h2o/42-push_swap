@@ -19,6 +19,7 @@ SRCS	=	${DIR_SRC}/ps_main.c \
 			${DIR_SRC}/ps_show.c \
 			${DIR_SRC}/ps_utils.c \
 			${DIR_SRC}/ps_stackargv.c \
+			${DIR_SRC}/ps_scan.c \
 			${DIR_SRC}/ps_error.c
 
 OBJS	=	${addprefix ${DIR_OBJ}/, ${notdir ${SRCS:.c=.o}}}
@@ -38,6 +39,7 @@ ${NAME}:	${OBJS}
 	${CC} ${FLAGS} -o ${NAME}  ${OBJS}
 
 ${DIR_OBJ}/%.o : %.c | ${DIR_OBJ}
+	clear
 	${CC} ${CFLAGS} -I ${DIR_INC} -o $@ -c $^
 
 ${DIR_OBJ} :
@@ -52,6 +54,9 @@ fclean:	clean
 re:		fclean all
 
 
+test:	all
+	clear
+	./${NAME} 5 2 3 1
 leak:
 	valgrind --leak-check=full ./${NAME} 12 65 78 45 32 98 0
 	valgrind --leak-check=full ./${NAME} 12 65 78 45lol 32 98 0

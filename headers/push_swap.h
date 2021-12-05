@@ -17,12 +17,22 @@ struct s_list {
 	plate	*down;
 };
 
+
+	// to remove
+
+void	ps_scan(plate **a, plate **b);
+
 	// functions
 
 int		ps_atoi(char *s);
+int		ps_argc_to_stack(int argc, char **argv, plate **topa);
+
 void	ps_add_plate(plate **top, int n);
 void	ps_free_stack(plate *top);
-void	ps_show(plate *top);
+void	ps_show(plate *topa, plate *topb);
+
+void	ps_rotate(plate **a);
+void	ps_swap(plate *x);
 
 	//	error
 
