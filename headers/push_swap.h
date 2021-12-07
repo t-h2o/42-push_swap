@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgrivel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/07 12:30:01 by tgrivel           #+#    #+#             */
+/*   Updated: 2021/12/07 12:30:03 by tgrivel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_h
 
 # define PUSH_SWAP_h
@@ -21,6 +33,7 @@ struct s_list {
 	// to remove
 
 void	ps_scan(plate **a, plate **b);
+int		ps_check_order(plate *top);
 
 // functions
 
