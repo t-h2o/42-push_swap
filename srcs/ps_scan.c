@@ -6,12 +6,14 @@
 /*   By: tgrivel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 12:13:26 by tgrivel           #+#    #+#             */
-/*   Updated: 2021/12/07 12:13:27 by tgrivel          ###   ########.fr       */
+/*   Updated: 2022/01/03 16:46:44 by tgrivel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
+/*	compare 2 string
+ */
 static int
 	ps_strcmp(char *s1, char *s2)
 {
@@ -21,6 +23,9 @@ static int
 	return (1);
 }
 
+/* It's a little prompt
+ * for test the push swap's functions
+ */
 void
 	ps_scan(plate **topa, plate **topb)
 {

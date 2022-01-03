@@ -6,11 +6,11 @@
 /*   By: tgrivel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 12:13:32 by tgrivel           #+#    #+#             */
-/*   Updated: 2021/12/07 12:13:34 by tgrivel          ###   ########.fr       */
+/*   Updated: 2022/01/03 16:02:19 by tgrivel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"./../headers/push_swap.h"
+#include	"push_swap.h"
 
 static int
 	ps_lstlen(plate *p)
@@ -85,8 +85,8 @@ static void
 void
 	ps_show(plate *topa, plate *topb)
 {
-	ps_simple_display(topa, topb);	
+//	ps_simple_display(topa, topb);	
 
-//	ps_dis_play(topa, 'A');
-//	ps_dis_play(topb, 'B');
+	ps_dis_play(topa, 'A');
+	ps_dis_play(topb, 'B');
 }

@@ -6,12 +6,18 @@
 /*   By: tgrivel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 12:13:08 by tgrivel           #+#    #+#             */
-/*   Updated: 2021/12/07 12:13:10 by tgrivel          ###   ########.fr       */
+/*   Updated: 2022/01/03 16:44:48 by tgrivel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"./../headers/push_swap.h"
+#include	"push_swap.h"
 
+/*	Check is there isn't same number
+ *	if there is same number
+ *		return (1)
+ *	else
+ *		return (0)
+ */
 int
 	ps_check_not_same(int *tab, int i)
 {
@@ -30,6 +36,11 @@ int
 	return (0);
 }
 
+/*	if the isn't enought arguments
+ *		return (1)
+ *	else
+ *		return (0)
+ */
 int
 	ps_is_arg(int argc)
 {
@@ -42,6 +53,9 @@ int
 	return (0);
 }
 
+/*	Check if the string 
+ *	have only digit or not
+ */
 int
 	ps_is_not_digit(char *s)
 {

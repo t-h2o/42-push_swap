@@ -17,9 +17,9 @@ DIR_INC	=	./headers/
 
 SRCS	=	${DIR_SRC}/ps_main.c \
 			${DIR_SRC}/ps_show.c \
-			${DIR_SRC}/ps_utils.c \
 			${DIR_SRC}/ps_stackargv.c \
 			${DIR_SRC}/ps_scan.c \
+			${DIR_SRC}/ps_stackfunctions.c \
 			${DIR_SRC}/ps_error.c
 
 OBJS	=	${addprefix ${DIR_OBJ}/, ${notdir ${SRCS:.c=.o}}}

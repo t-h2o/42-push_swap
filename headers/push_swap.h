@@ -6,7 +6,7 @@
 /*   By: tgrivel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 12:30:01 by tgrivel           #+#    #+#             */
-/*   Updated: 2021/12/07 12:30:03 by tgrivel          ###   ########.fr       */
+/*   Updated: 2022/01/03 15:42:31 by tgrivel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_list plate;
 
 struct s_list {
 	int		n;
-	plate	*up;
 	plate	*down;
 };
 
@@ -38,6 +37,7 @@ int		ps_check_order(plate *top);
 // functions
 
 	// Utils
+
 void	ps_push(plate **src, plate **dst);
 int		ps_atoi(char *s);
 int		ps_argc_to_stack(int argc, char **argv, plate **topa);

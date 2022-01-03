@@ -6,12 +6,14 @@
 /*   By: tgrivel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 12:13:16 by tgrivel           #+#    #+#             */
-/*   Updated: 2021/12/07 12:13:20 by tgrivel          ###   ########.fr       */
+/*   Updated: 2022/01/03 16:45:32 by tgrivel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
+/*	2 struct A and B
+ */
 int
 	main(int argc, char **argv)
 {

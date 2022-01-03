@@ -1,42 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_utils.c                                         :+:      :+:    :+:   */
+/*   ps_stackfunctions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgrivel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 12:13:49 by tgrivel           #+#    #+#             */
-/*   Updated: 2021/12/07 12:13:51 by tgrivel          ###   ########.fr       */
+/*   Created: 2022/01/03 10:54:53 by tgrivel           #+#    #+#             */
+/*   Updated: 2022/01/03 16:53:13 by tgrivel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
+/*	swap the both 1st number of the stack
+ */
+void
+	ps_swap(plate *x)
+{
+	int	tmp;
+
+	if (!x)
+		return ;
+	tmp = x->n;
+	x->n = x->down->n;
+	x->down->n = tmp;
+}
+
+/*	push the 1st number in the other stack
+ *	for call it,
+ *	the 1st argument is the source
+ *	and 2nd argument is the destination
+ */
 void
 	ps_push(plate **src, plate **dst)
 {
-	plate	*b;
+	
 	if (!*src)
 		return ;
 	if (!*dst)
 	{
-		*dst = *src;
+		(*dst) = *src;
 		*src = (*src)->down;
-		(*src)->up = 0;
 		(*dst)->down = 0;
 	}
 	else
 	{
-		(*dst)->up = *src;
+		plate	*tmp;
+
+		tmp = *dst;
+		*dst = *src;
 		*src = (*src)->down;
-		if (*src)
-			(*src)->up = 0;
-		b = (*dst);
-		*dst = (*dst)->up;
-		(*dst)->down = b;
+		(*dst)->down = tmp;
 	}
 }
 
+/*	put the last number on the top
+ */
 void
 	ps_reverse_rotate(plate **a)
 {
@@ -55,53 +74,21 @@ void
 	*a = end;
 }
 
+/*	put the 1st number on the bottom
+ */
 void
 	ps_rotate(plate **a)
 {
-	plate	*b;
-	plate	*z;
+	plate	*tmp;
+	plate	*ptr;
 
 	if (!*a)
 		return ;
-	b = (*a)->down;
-	z = b;
-	while (z->down)
-		z = z->down;
-	z->down = *a;
-	(*a)->up = z;
-	(*a)->down = 0;
-	b->up= 0;
-	*a = b;
+	tmp = *a;
+	*a = (*a)->down;
+	ptr = *a;
+	while (ptr->down)
+		ptr = ptr->down;
+	ptr->down = tmp;
+	ptr->down->down = 0;
 }
-
-void
-	ps_swap(plate *x)
-{
-	int	tmp;
-
-	if (!x)
-		return ;
-	tmp = x->n;
-	x->n = x->down->n;
-	x->down->n = tmp;
-}
-
-int
-	ps_atoi(char *s)
-{
-	int	minus = 1;
-	int	r;
-
-	r = 0;
-	if (*s == '-')
-		minus = -1;
-	if (*s == '-')
-		s++;
-	while (*s)
-	{
-		r = (*s - '0') + (r * 10);
-		s++;
-	}
-	return (r * minus);
-}
-

@@ -6,12 +6,36 @@
 /*   By: tgrivel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 12:13:42 by tgrivel           #+#    #+#             */
-/*   Updated: 2021/12/07 12:13:44 by tgrivel          ###   ########.fr       */
+/*   Updated: 2022/01/03 16:54:50 by tgrivel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"./../headers/push_swap.h"
+#include	"push_swap.h"
 
+/*	Return the number in a string
+ */
+int
+	ps_atoi(char *s)
+{
+	int	minus = 1;
+	int	r;
+
+	r = 0;
+	if (*s == '-')
+		minus = -1;
+	if (*s == '-')
+		s++;
+	while (*s)
+	{
+		r = (*s - '0') + (r * 10);
+		s++;
+	}
+	return (r * minus);
+}
+
+/*	Add number one to one 
+ *	in the chain list
+ */
 void
 	ps_add_plate(plate **top, int n)
 {
@@ -30,9 +54,11 @@ void
 	while (ptr->down)
 		ptr = ptr->down;
 	ptr->down = new;
-	new->up = ptr;
 }
 
+/*	free the stack
+ *	struct by struct
+ */
 void
 	ps_free_stack(plate *top)
 {
@@ -46,12 +72,13 @@ void
 	}
 }
 
+/*	Convert the arguments to a chain list
+ *	error -> return 1
+ *	goood -> return 0
+ */
 int
 	ps_argc_to_stack(int argc, char **argv, plate **topa)
 {
-	// if error, return 1
-	// if good, return 0
-
 	int		*tab;
 	int		i;
 
@@ -71,7 +98,6 @@ int
 		tab[i] = ps_atoi(*argv);
 		ps_add_plate(topa, tab[i++]);
 	}
-
 	if (ps_check_not_same(tab, i))
 	{
 		ps_free_stack(*topa);
