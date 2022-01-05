@@ -20,7 +20,8 @@ SRCS	=	${DIR_SRC}/ps_main.c \
 			${DIR_SRC}/ps_stackargv.c \
 			${DIR_SRC}/ps_scan.c \
 			${DIR_SRC}/ps_stackfunctions.c \
-			${DIR_SRC}/ps_error.c
+			${DIR_SRC}/ps_error.c	\
+			${DIR_SRC}/ps_sort.c
 
 OBJS	=	${addprefix ${DIR_OBJ}/, ${notdir ${SRCS:.c=.o}}}
 

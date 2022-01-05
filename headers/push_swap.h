@@ -6,7 +6,7 @@
 /*   By: tgrivel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 12:30:01 by tgrivel           #+#    #+#             */
-/*   Updated: 2022/01/03 15:42:31 by tgrivel          ###   ########.fr       */
+/*   Updated: 2022/01/05 17:20:33 by tgrivel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	ps_rotate(plate **a);
 void	ps_reverse_rotate(plate **a);
 void	ps_swap(plate *x);
 
+void	ps_sort(plate ** topa, plate ** topb);
 	//	error
 
 int		ps_is_not_digit(char *s);

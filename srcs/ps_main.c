@@ -6,7 +6,7 @@
 /*   By: tgrivel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 12:13:16 by tgrivel           #+#    #+#             */
-/*   Updated: 2022/01/03 16:45:32 by tgrivel          ###   ########.fr       */
+/*   Updated: 2022/01/05 17:43:16 by tgrivel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ int
 	
 	if(ps_argc_to_stack(argc, argv, &topa))
 		return (0);
-	
-	ps_scan(&topa, &topb);
+
+//	little prompt to test basic funtions	
+//	ps_scan(&topa, &topb);
+
+	ps_sort(&topa, &topb);
 
 	ps_free_stack(topa);	
 	ps_free_stack(topb);	
