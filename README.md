@@ -5,7 +5,6 @@
 the goal of this branch is to help 
 to undanrstand the concept of stacks.
 
-Just do a ```make``` and ```./push_swap 3 6 2 8 1```
 
 ```
 ./push_swap 3 6 2 8 1                    
@@ -30,6 +29,16 @@ Just do a ```make``` and ```./push_swap 3 6 2 8 1```
 
 
 2	| Give the command :
+```
+
+### try on your pc
+
+```
+$ git clone https://github.com/theo-grivel/42-push_swap
+$ cd 42-push_swap
+$ git checkout prompt
+$ make
+$ ./push_swap 3 6 2 8 1
 ```
 
 
