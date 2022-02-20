@@ -6,7 +6,7 @@
 /*   By: tgrivel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 12:13:26 by tgrivel           #+#    #+#             */
-/*   Updated: 2021/12/07 12:13:27 by tgrivel          ###   ########.fr       */
+/*   Updated: 2022/02/20 13:45:56 by tgrivel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void
 		else if (ps_strcmp(input, "help"))
 		{
 			printf("help\n");
+			/*	Create a help message
+			 */
 		}
 		else
 		{
