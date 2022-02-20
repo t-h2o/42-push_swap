@@ -1,5 +1,15 @@
 # 42-push_swap
 
+## Do you want try with a prompt ?
+
+```
+$ git clone https://github.com/theo-grivel/42-push_swap
+$ cd 42-push_swap
+$ git checkout prompt
+$ make
+$ ./push_swap 3 6 2 8 1
+```
+
 ## Projets tree
 ```
 .
